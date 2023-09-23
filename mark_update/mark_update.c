@@ -26,7 +26,7 @@ int main(int argc, const char *argv[], const char *envp[]) {
 
     SQLHENV henv;
     SQLAllocHandle(SQL_HANDLE_ENV, SQL_NULL_HANDLE, &henv);
-    SQLSetEnvAttr(henv, SQL_ATTR_ODBC_VERSION, (SQLPOINTER *)SQL_OV_ODBC3, 0);
+    SQLSetEnvAttr(henv, SQL_ATTR_ODBC_VERSION, (SQLPOINTER *) SQL_OV_ODBC3, 0);
 
     SQLHDBC hdbc;
     SQLAllocHandle(SQL_HANDLE_DBC, henv, &hdbc);
