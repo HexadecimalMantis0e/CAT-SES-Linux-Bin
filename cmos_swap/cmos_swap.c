@@ -9,6 +9,7 @@
 int main(int argc, const char *argv[], const char *envp[]) {
     char src[24];
     strcpy(src, "cmos.mem");
+
     int mode = 0;
     print_head_warn();
 
@@ -46,6 +47,7 @@ int main(int argc, const char *argv[], const char *envp[]) {
             print_info();
             exit(8);
         }
+        
         strcpy(dest, argv[2]);
     }
 
@@ -68,6 +70,7 @@ int main(int argc, const char *argv[], const char *envp[]) {
         puts("==================================================");
         exit(8);
     }
+
     iopl(3);
     cli();
 
@@ -88,6 +91,7 @@ int main(int argc, const char *argv[], const char *envp[]) {
             puts("==================================================");
             exit(8);
         }
+
         printf("\n checksum: %d\n\n", csOne);
 
         for (int i = 0; i < 256; i++) {
@@ -109,6 +113,7 @@ int main(int argc, const char *argv[], const char *envp[]) {
                 setCmos(i, ptr[i]);
             }
         }
+
         puts("\n");
     }
     else {
@@ -126,6 +131,7 @@ int main(int argc, const char *argv[], const char *envp[]) {
         for (int i = 0; i < 256; i++) {
             fputc(ptr[i], stream);
         }
+
         fputc(csOne, stream);
     }
 
