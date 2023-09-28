@@ -4,8 +4,8 @@
 #include <sqlext.h>
 
 void ses_log(const char *logType, const char *logMsg) {
-	char dest[520];
-	memcpy(dest, "/SES/bin/ses_log ", 0x12);
+    char dest[520];
+    memcpy(dest, "/SES/bin/ses_log ", 0x12);
     strcat(dest, logType);
     strcat(dest, " ");
     strcat(dest, "\"");

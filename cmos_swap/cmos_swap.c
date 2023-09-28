@@ -56,10 +56,10 @@ int main(int argc, const char *argv[], const char *envp[]) {
     char modes[15];
 
     if (mode) {
-        memcpy(modes, "r", 2);
+        memcpy(modes, "r", 0x02);
     }
     else {
-        memcpy(modes, "w", 2);
+        memcpy(modes, "w", 0x02);
     }
 
     FILE *stream = fopen(dest, modes);

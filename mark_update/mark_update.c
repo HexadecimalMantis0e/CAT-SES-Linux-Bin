@@ -63,7 +63,7 @@ int main(int argc, const char *argv[], const char *envp[]) {
     char fetchData[32];
 
     if (ret == SQL_NO_DATA) {
-        memcpy(fetchData, "\0", 1);
+        memcpy(fetchData, "\0", 0x01);
     }
     else {
         strcpy(fetchData, src);

@@ -37,7 +37,7 @@ int main(int argc, const char *argv[], const char *envp[]) {
 
     char src[128];
 
-    if (!strftime(src, 0x80, "%Y%m%d%H%M%S", t_convert)) {
+    if (!strftime(src, 128, "%Y%m%d%H%M%S", t_convert)) {
         fwrite("\nError converting time(strftime)", 1, 0x20, stderr);
         cleanup(henv, hdbc, hstmt, s);
         exit(1);
